@@ -1,0 +1,17 @@
+{% extends "base.j2" %}
+
+{% block content %}
+
+<article id="page">
+  <header id="heading">
+    <h1>{{resource.meta.title}}</h1>
+    <h2 class="time">{{resource.meta.time}}</h2>
+  </header>
+  <div id="body">
+    {% filter markdown -%}
+    {% block blogpost %}{% endblock %}
+    {%- endfilter %}
+  </div>
+</article>
+
+{% endblock %}

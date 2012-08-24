@@ -1,0 +1,5 @@
+extends: false
+# When set to false, then the files in this folder and below it are not
+# processed as jinja2 templates. Currently we need them to be to be able to use
+# {{ media_url(...) }} directives (in CSS files for instance).
+# uses_template: false

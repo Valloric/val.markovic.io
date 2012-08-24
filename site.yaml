@@ -1,0 +1,78 @@
+mode: dev
+media_root: media
+media_url: /media
+base_url: /
+plugins:
+    - hyde.ext.plugins.meta.MetaPlugin
+    - hyde.ext.plugins.auto_extend.AutoExtendPlugin
+    - hyde.ext.plugins.sorter.SorterPlugin
+    # Requires PIL: sudo pip install pil
+    - hyde.ext.plugins.images.ImageSizerPlugin
+    # Requires jpegoptim: brew install jpegoptim
+    - hyde.ext.plugins.jpegoptim.JPEGOptimPlugin
+    # Requires lessc: npm install less -g
+    - hyde.ext.plugins.less.LessCSSPlugin
+    # Requires optipng: brew install optipng
+    - hyde.ext.plugins.optipng.OptiPNGPlugin
+    # Requires uglifyjs: npm install uglify-js -g
+    - hyde.ext.plugins.uglify.UglifyPlugin
+    - hyde.ext.plugins.urls.UrlCleanerPlugin
+    - extra_hyde_plugins.suffix.SuffixPlugin
+context:
+    data:
+        author:
+            name: Val Markovic
+            url: "http://val.markovic.io"
+        layout:
+            name: Hyde Starter Kit
+            url: "https://github.com/merlinrebrovic/hyde-starter-kit"
+
+# This defines meta data on the whole site.
+meta:
+    # 'nodemeta' will tell Hyde what file to look for inside a folder from
+    # which to apply meta data to all files (resources) inside it. This is
+    # a great way of simply adding or modifying properties of a very large
+    # number of files.
+    nodemeta: meta.yaml
+    ga_tracking_code: XX-XXXXXXXX-X
+sorter:
+    name: # the name of the sorter (no pun intended)
+        attr: name # by which attributes will resources be sorted
+        filters:
+            source_file.kind: md
+            # You can include only files from a certain folder.
+            #resource.node: (name of the folder)
+        #reverse: True # if you need the list backwards
+    file_type:
+        attr:
+            - source_file.kind
+            - source_file.size
+    index:
+        attr: meta.index
+        filters:
+            source_file.kind: md
+urlcleaner:
+    index_file_names:
+        # identifies the files that represents a directory listing.
+        # these file names are automatically stripped away when
+        # the content_url function is called.
+        - index.html
+        - index.md
+    strip_extensions:
+        # the following extensions are automatically removed when
+        # generating the urls using content_url function.
+        - html
+        - md
+    # this option will append a slash to the end of directory paths
+    append_slash: true
+markdown:
+    extensions:
+        - abbr
+        - footnotes
+suffix:
+    -
+        target_extension:
+            - markdown
+            - md
+        #output_extension: "" # yes, an empty extension on purpose; clean urls!
+        output_extension: html

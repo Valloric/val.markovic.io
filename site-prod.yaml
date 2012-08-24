@@ -1,0 +1,8 @@
+extends: "site.yaml"
+mode: production
+suffix:
+    -
+        target_extension:
+            - markdown
+            - md
+        output_extension: "" # yes, an empty extension on purpose; clean urls!
