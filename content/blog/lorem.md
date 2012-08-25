@@ -1,6 +1,5 @@
 ---
 title: Lorem ipsum & Dolor Sit Amet
-time: 7 December 2009
 ---
 
 Lorem ipsum dolor & sit amet, "consectetur adipiscing" elit. Integer ultrices--tempor
