@@ -5,6 +5,7 @@ plugins:
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.sorter.SorterPlugin
     - hyde.ext.plugins.urls.UrlCleanerPlugin
+    - hyde.ext.plugins.textlinks.TextlinksPlugin
     - extra_hyde_plugins.suffix.SuffixPlugin
     # Requires lessc: npm install less -g
     - hyde.ext.plugins.less.LessCSSPlugin
@@ -22,3 +23,6 @@ suffix:
             - markdown
             - md
         output_extension: "" # yes, an empty extension on purpose; clean urls!
+less:
+    args:
+        compress: ""
