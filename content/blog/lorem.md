@@ -1,12 +1,12 @@
 ---
-title: Lorem ipsum Dolor Sit Amet
+title: Lorem ipsum & Dolor Sit Amet
 time: 7 December 2009
 ---
 
-Lorem ipsum dolor sit amet, "consectetur adipiscing" elit. Integer ultrices tempor
+Lorem ipsum dolor & sit amet, "consectetur adipiscing" elit. Integer ultrices--tempor
 tincidunt. [Mauris sit amet ante augue]([[/about]]) eu pulvinar lorem. Nam eleifend sodales
 consectetur. Sed eget mi ac __ununc ltrices__ egestas _a vitae nibh_. Maecenas
-mattis pharetra lorem. Fusce faucibus lacus nec tellus interdum nec cursus ante
+mattis pharetra lorem. Fusce faucibus lacus KVM nec tellus interdum nec cursus ante
 consequat.
 
 Aliquam sed nisi mauris.
