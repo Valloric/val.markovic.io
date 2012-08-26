@@ -1,0 +1,34 @@
+@import "building-blocks.less";
+@import "elements.less";
+
+#post-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  .post-item {
+    margin-bottom: 1.5em;
+    padding: 0.75em 20px;
+    background-color: @dark-grey;
+
+    .box-shadow( ~"0 0 0.2em rgba(255, 255, 255, 0.12), 0 0 2.2em rgba(255, 255, 255, 0.10)" );
+    .rounded( 0.25em );
+
+    .post-title {
+      display: inline;
+    }
+
+    .post-date {
+      .simonetta;
+      color: @light-grey;
+      float: right;
+      font-size: 0.9em;
+    }
+
+    .post-summary {
+      font-size: 1em;
+      margin: 0;
+      margin-top: 0.8em;
+    }
+  }
+}

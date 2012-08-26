@@ -1,14 +1,5 @@
-@bg-color: #1B1B1B;
-@text-color: #eeeeee;
-@light-grey: darken(@text-color, 30%);
-@link-color: #00A7F7;
+@import "building-blocks.less";
 
-@main_header_top_margin: 1.3em;
-@main_header_bottom_margin: 1.3em;
-@main_header_content_height: 1em;
-@main_header_full_height: @main_header_top_margin +
-                          @main_header_content_height +
-                          @main_header_bottom_margin;
 
 body {
   // This is just a fallback
@@ -33,7 +24,7 @@ body {
 }
 
 #main-nav {
-  font-family: 'Crete Round', serif;
+  .crete-round;
   margin: 0 auto;
 }
 
@@ -112,23 +103,32 @@ hr {
   }
 }
 
-h1
-{
-  font-size: 1.8em;
-  font-family: 'Crete Round', serif;
-  font-weight: normal;
-  margin: 0;
+#content {
+  h2, p, dl {
+    margin-bottom: 1.5em;
+    margin-top: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    .crete-round;
+  }
 }
 
-#content {
-  h2, p, dl { margin-bottom: 1.5em; }
-  ul, ol { margin: 0 0 1.5em 1.5em; }
+h1 {
+  font-size: @h1-font-size;
+  font-weight: normal;
+  margin-bottom: @main_header_full_height - @h1-font-size;
+  text-align: center;
+}
+
+#blog-title {
+  margin: 0;
 }
 
 
 // We need h2 in the selector for the specificity
 h2#time {
-  font-family: 'Simonetta', cursive;
+  .simonetta;
   color: @light-grey;
   margin-top: 0.7em;
   margin-bottom: @main_header_full_height / 2;
