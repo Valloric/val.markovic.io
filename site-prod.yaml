@@ -9,7 +9,7 @@ plugins:
     - hyde.ext.plugins.textlinks.TextlinksPlugin
     - extra_hyde_plugins.suffix.SuffixPlugin
     # Requires lessc: npm install less -g
-    - hyde.ext.plugins.less.LessCSSPlugin
+    - extra_hyde_plugins.less.LessCSSPlugin
     # Requires PIL: sudo pip install pil
     - hyde.ext.plugins.images.ImageSizerPlugin
     # Requires jpegoptim: brew install jpegoptim

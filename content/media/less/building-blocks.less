@@ -12,11 +12,19 @@
                           @main_header_content_height +
                           @main_header_bottom_margin;
 
-.simonetta {
+.simonetta() {
   font-family: 'Simonetta', cursive;
 }
 
-.crete-round {
+.crete-round() {
   font-family: 'Crete Round', serif;
+}
+
+.background-gradient( @arguments ) {
+  background: -webkit-linear-gradient( @arguments );
+  background: -moz-linear-gradient( @arguments );
+  background: -ms-linear-gradient( @arguments );
+  background: -o-linear-gradient( @arguments );
+  background: linear-gradient( @arguments );
 }
 
