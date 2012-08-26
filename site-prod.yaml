@@ -2,7 +2,7 @@ extends: "site.yaml"
 mode: production
 plugins:
     - hyde.ext.plugins.meta.MetaPlugin
-    - hyde.ext.plugins.git.GitDatesPlugin
+    - extra_hyde_plugins.git.GitDatesPlugin
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.sorter.SorterPlugin
     - hyde.ext.plugins.urls.UrlCleanerPlugin

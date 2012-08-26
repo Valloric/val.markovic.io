@@ -4,7 +4,7 @@ media_url: /media
 base_url: /
 plugins:
     - hyde.ext.plugins.meta.MetaPlugin
-    - hyde.ext.plugins.git.GitDatesPlugin
+    - extra_hyde_plugins.git.GitDatesPlugin
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.sorter.SorterPlugin
     - hyde.ext.plugins.urls.UrlCleanerPlugin
@@ -43,6 +43,10 @@ sorter:
             - source_file.size
     index:
         attr: meta.index
+        filters:
+            source_file.kind: md
+    date:
+        attr: meta.created # the 'created' attribute comes from the GitDatesPlugin
         filters:
             source_file.kind: md
 urlcleaner:
