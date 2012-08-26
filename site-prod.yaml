@@ -27,3 +27,6 @@ suffix:
 less:
     args:
         compress: ""
+uglify:
+    args:
+        no-copyright: ""
