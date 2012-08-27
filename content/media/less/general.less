@@ -99,15 +99,13 @@ hr {
   }
 }
 
-#content {
-  h2, p, dl {
-    margin-bottom: 1.5em;
-    margin-top: 0;
-  }
+h2, p, dl {
+  margin-bottom: 1.5em;
+  margin-top: 0;
+}
 
-  h1, h2, h3, h4, h5, h6 {
-    .crete-round;
-  }
+h1, h2, h3, h4, h5, h6 {
+  .crete-round;
 }
 
 h1 {
@@ -115,6 +113,8 @@ h1 {
   font-weight: normal;
   margin-bottom: @main_header_full_height - @h1-font-size;
   text-align: center;
+  line-height: 1.2em;
+  margin-top: -0.19em; // because of increased line-height
 }
 
 #blog-title {
@@ -122,8 +122,7 @@ h1 {
 }
 
 
-// We need h2 in the selector for the specificity
-h2#time {
+#time {
   .simonetta;
   color: @light-grey;
   margin-top: 0.7em;
