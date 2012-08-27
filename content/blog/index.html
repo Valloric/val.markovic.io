@@ -8,8 +8,10 @@ default_block: content
 <ol id="post-list">
   {% for resource in site.content.node_from_relative_path('blog').walk_resources_sorted_by_date() %}
   <li class="post-item">
-    <h3 class="post-title"><a href="{{ resource.relative_deploy_path }}">{{ resource.meta.title }}</a></h3>
-    <span class="post-date">{{ resource.meta.created.strftime("%B %d, %Y") }}</span>
+    <div class="clearfix">
+      <span class="post-date">{{ resource.meta.created.strftime("%B %d, %Y") }}</span>
+      <h3 class="post-title"><a href="{{ resource.relative_deploy_path }}">{{ resource.meta.title }}</a></h3>
+    </div>
     <p class="post-summary">{{ resource.meta.summary }}</p>
   </li>
   {% endfor %}
