@@ -1,5 +1,5 @@
 ---
-title: Lorem ipsum & Dolor Sit Amet
+title: Lorem CSS ipsum & Dolor Sit Amet
 summary: "Nulla sit amet lacus at massa pharetra mattis at eu tortor. Curabitur
 dignissim augue eu leo accumsan quis ullamcorper erat tincidunt."
 
