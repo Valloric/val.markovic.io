@@ -9,7 +9,7 @@ body {
   background: url("[[!!img/bg_pattern.png]]");
   color: @text-color;
   font-family: 'Droid Serif', serif;
-  line-height: 2.7ex;
+  line-height: @main-line-height;
 }
 
 #wrap {
@@ -104,7 +104,7 @@ hr {
 }
 
 h2, p, dl {
-  margin-bottom: 1.5em;
+  margin-bottom: @main-line-height;
   margin-top: 0;
 }
 
@@ -148,7 +148,7 @@ h1 {
 
 .caps {
   // font-size of 1.1 em makes Mate SC have the same x-height of Droid Serif, so
-  // we add another 0.1 em to make it *slightly* taller than that, as is
+  // we add another 0.05 em to make it *slightly* taller than that, as is
   // customary in Anglo-Saxon typography.
   font-size: 1.15em;
   font-family: "Mate SC",serif;
