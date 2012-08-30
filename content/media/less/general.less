@@ -10,6 +10,7 @@ body {
   color: @text-color;
   font-family: 'Droid Serif', serif;
   line-height: @main-line-height;
+  font-size: @main-font-size;
 }
 
 #wrap {
@@ -131,12 +132,17 @@ h1 {
   color: @light-grey;
   margin-top: 0.7em;
   margin-bottom: @main_header_full_height / 2;
-  font-size: 1em;
+  font-size: @main-font-size;
+}
+
+#post-body > p:first-of-type {
+  font-size: @main-font-size * 1.14;
+  line-height: @main-line-height * 1.125;
 }
 
 .amp {
   font-size: 1.05em;
-  font-family: "Warnock Pro", "Goudy Old Style","Palatino","Book Antiqua",serif;
+  font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",serif;
   font-style: italic;
 }
 
