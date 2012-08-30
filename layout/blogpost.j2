@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<article id="page">
-  <header id="heading">
-    <h1 id="blog-title">{{resource.meta.title}}</h1>
+<article id="post">
+  <header id="post-heading">
+    <h1 id="post-title">{{resource.meta.title}}</h1>
     <h2 id="time">Posted <time
     class="timeago"
     datetime="{{ resource.meta.created|xmldatetime }}"></time>
             on {{ resource.meta.created.strftime("%B %d, %Y") }}</h2>
   </header>
-  <div id="body">
+  <div id="post-body">
     {% filter markdown -%}
     {% block blogpost %}{% endblock %}
     {%- endfilter %}
