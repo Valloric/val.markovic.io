@@ -49,6 +49,8 @@ sorter:
         attr: meta.created # the 'created' attribute comes from the GitDatesPlugin
         filters:
             source_file.kind: md
+# changes the links pointing to the files, but not the extensions/paths where
+# those files are located
 urlcleaner:
     index_file_names:
         # identifies the files that represents a directory listing.
@@ -67,6 +69,8 @@ markdown:
     extensions:
         - abbr
         - footnotes
+# changes the extension of the generated files, but not the links pointing to
+# those files
 suffix:
     -
         target_extension:

@@ -10,7 +10,7 @@ default_block: content
   <li class="post-item">
     <div class="clearfix">
       <span class="post-date">{{ resource.meta.created.strftime("%B %d, %Y") }}</span>
-      <h3 class="post-title"><a href="{{ resource.relative_deploy_path }}">{{ resource.meta.title }}</a></h3>
+      <h3 class="post-title"><a href="{{ resource.full_url }}">{{ resource.meta.title }}</a></h3>
     </div>
     <p class="post-summary">{{ resource.meta.summary }}</p>
   </li>
