@@ -140,6 +140,13 @@ h1 {
   line-height: @main-line-height;
 }
 
+p a {
+  // Needed because we use a border-bottom to underline the link on hover and
+  // without the padding the border touches descenders in letters like p, g, q
+  // etc.
+  padding-bottom: 0.12em;
+}
+
 .amp {
   font-size: 1.05em;
   font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",serif;

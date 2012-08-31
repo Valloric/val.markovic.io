@@ -16,10 +16,11 @@ Aliquam sed nisi mauris.
 Nulla sit amet lacus at massa pharetra mattis at eu tortor. Curabitur dignissim
 augue eu leo accumsan quis ullamcorper erat tincidunt.
 
-Vill koum wéi ke, dir ze welle fergiess zwëschen. Op brét Feierwon mir, hin mä
-welle Gaart erwaacht. Da hie stét Kënnt Freiesch, rifft kommen grousse am gét,
-huet bléit d'Margréitchen blo ze. Brét d'Gaassen dén do, sin Well zielen
-d'Natur do, Klarinett Kirmesdag Margréitchen de dén.
+Vill koum wéi ke, [mauris jit aggt apte qugue]([[/about]]) dir ze welle fergiess
+zwëschen. Op brét Feierwon mir, hin mä welle Gaart erwaacht. Da hie stét Kënnt
+Freiesch, rifft kommen grousse am gét, huet bléit d'Margréitchen blo ze. Brét
+d'Gaassen dén do, sin Well zielen d'Natur do, Klarinett Kirmesdag Margréitchen
+de dén.
 
 Cras enim diam, cursus id condimentum ac, gravida et quam. Suspendisse ultricies
 libero quis quam facilisis blandit. Nunc adipiscing dolor et magna tincidunt
