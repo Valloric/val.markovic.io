@@ -177,14 +177,19 @@ footer {
   color: @light-grey;
   margin-top: @main-line-height;
   text-align: center;
+
+  p {
+    margin: 0;
+  }
 }
 
 #license {
-  margin-left: @main-line-height;
+  margin-top: @main-line-height / 2;
+  line-height: 0;
 
-  img {
-    // "baseline" should work, but doesn't for some reason
-    vertical-align: -0.1em;
+  a {
+    padding: 0;
+    margin: 0;
   }
 }
 
