@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
   <meta name="description" content="" />
   <meta name="author" content="Val Markovic" />
-
   <meta name="viewport" content="width=device-width" />
 
   <title>{{resource.meta.title}}</title>
 
   <link
     href='http://fonts.googleapis.com/css?family=Mate+SC|Simonetta|Crete+Round|Droid+Serif:400,700,400italic,700italic'
-    rel='stylesheet'
-    type='text/css' />
+    rel='stylesheet' />
 
   {# TODO: make a macro for this less vs css logic #}
   {% if site.config.mode == "production" -%}
@@ -56,6 +53,16 @@
     <hr class="bottom" />
 
     <footer>
+      <p>Also present on
+        <a href="https://github.com/Valloric">GitHub</a> and
+        <a rel="author" href="https://plus.google.com/106348091143351993037/posts">Google+</a>
+        <a id="license" class="raw-link" rel="license"
+          href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
+          <img
+            alt="Creative Commons License"
+            src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a>
+      </p>
+
       {% if site.config.mode == "production" -%}
       {% include "ga.j2" %}
       {%- endif %}

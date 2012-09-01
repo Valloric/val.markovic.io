@@ -31,7 +31,8 @@ body {
 }
 
 
-a {
+// links with a "raw-link" class will not be styled
+a:not(.raw-link) {
   .transition();
   border-bottom: 1px solid transparent;
 
@@ -50,8 +51,10 @@ a {
   }
 }
 
-.special-link:link, .special-link:visited {
-  color: @text-color;
+a.special-link {
+  &:link, &:visited {
+    color: @text-color;
+  }
 }
 
 #home-link {
@@ -130,7 +133,7 @@ h1 {
 #time {
   .simonetta;
   color: @light-grey;
-  margin-top: 0.7em;
+  margin-top: 0.7em; // TODO: should be in terms of main-line-height
   margin-bottom: @main_header_full_height / 2;
   font-size: @main-font-size;
 }
@@ -168,5 +171,21 @@ p a {
   text-transform: lowercase;
   // small-caps need a bit extra tracking (letter-spacing)
   letter-spacing: 0.12em;
+}
+
+footer {
+  .simonetta;
+  color: @light-grey;
+  margin-top: @main-line-height;
+  text-align: center;
+}
+
+#license {
+  margin-left: @main-line-height;
+
+  img {
+    // "baseline" should work, but doesn't for some reason
+    vertical-align: -0.1em;
+  }
 }
 
