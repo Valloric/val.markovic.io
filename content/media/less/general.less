@@ -63,13 +63,12 @@ a.special-link {
 
 #rss-link {
   float: left;
-  display: inline-block;
-  width: 14px;
-  height: 14px;
   margin-left: 0.65em;
-  position: relative;
-  top: 0.25em;
-  background: url("[[!!img/feed-icon-14x14.png]]") no-repeat 0 50%;
+
+  img {
+    // "baseline" should work, but doesn't for some reason
+    vertical-align: -0.1em;
+  }
 }
 
 #navigation-links {
