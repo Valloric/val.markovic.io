@@ -49,7 +49,10 @@
 
     <div id="content">
     {% filter typogrify -%}
-    {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
+      {% filter markdown -%}
+        {% block markdown_content %}{% endblock %}
+      {%- endfilter %}
     {%- endfilter %}
     </div>
 

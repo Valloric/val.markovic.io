@@ -1,8 +1,11 @@
 ---
 title: About
+extends: base.j2
+default_block: markdown_content
 ---
 
-<h1>About</h1>
+About
+=====
 
 <section itemscope="" itemtype="http://data-vocabulary.org/Person">
   <img itemprop="image"
