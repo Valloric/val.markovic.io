@@ -1,13 +1,13 @@
 @import-once "building-blocks.less";
 @import-once "elements.less";
+@import-once "retina.less";
 
 
 body {
   .droid-serif;
   // This is just a fallback
   background: @bg-color;
-  // TODO: convert to data-uri; do the same thing for the RSS icon
-  background: url("[[!!img/bg_pattern.png]]");
+  .at2x("[[!!img/bg_pattern.png]]");
   color: @text-color;
   line-height: @main-line-height;
   font-size: @main-font-size;
