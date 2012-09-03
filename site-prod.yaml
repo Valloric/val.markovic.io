@@ -11,7 +11,7 @@ plugins:
     # Requires lessc: npm install less -g
     - extra_hyde_plugins.less.LessCSSPlugin
     # Requires PIL: sudo pip install pil
-    - hyde.ext.plugins.images.ImageSizerPlugin
+    - extra_hyde_plugins.images.ImageSizerPlugin
     # Requires jpegoptim: brew install jpegoptim
     - hyde.ext.plugins.jpegoptim.JPEGOptimPlugin
     # Requires optipng: brew install optipng

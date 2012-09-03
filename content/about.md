@@ -11,8 +11,7 @@ About
   <img itemprop="image"
        id="headshot"
        src="{{ media_url('img/headshot.jpg') }}"
-       alt="headshot"
-       width="200px" />
+       alt="headshot" />
   <p>Hi, my name is
   <span itemprop="name">Strahinja <span itemprop="nickname">Val</span>
   Markovic</span> and I am a <span itemprop="title">Software Engineer</span>
