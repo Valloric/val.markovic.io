@@ -2,6 +2,8 @@
 title: About
 extends: base.j2
 default_block: markdown_content
+summary: "Information about Val Markovic, creator of squishy bits made of
+          software."
 ---
 
 About
