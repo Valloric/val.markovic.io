@@ -93,15 +93,34 @@ a.special-link {
 hr {
   clear: both;
   border: 0;
-  height: 1px;
   margin: 0;
-  .background-gradient( ~"left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)" );
+  // times 2 because the :after pseudo-element has @main-line-height height and
+  // it's actualy inside the margin
+  margin-bottom: @main-line-height * 2;
+  text-align: center;
+
+  &:after {
+    content: "✭ ✭ ✭";
+    word-spacing: @main-line-height * 2;
+    color: @light-grey;
+  }
+
+  &.main {
+    height: 1px;
+    .background-gradient( ~"left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)" );
+
+    &:after {
+      content: "";
+    }
+  }
 
   &.top {
+    margin: 0;
     margin-bottom: @main_header_full_height;
   }
 
   &.bottom {
+    margin: 0;
     margin-top: @main_header_full_height;
   }
 }
@@ -189,6 +208,10 @@ pre {
 
 code {
   .monospace;
+}
+
+.footnote {
+  font-size: 0.9em;
 }
 
 footer {
