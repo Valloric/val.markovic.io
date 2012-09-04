@@ -10,6 +10,7 @@ plugins:
     - hyde.ext.plugins.urls.UrlCleanerPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
     - extra_hyde_plugins.suffix.SuffixPlugin
+    - extra_hyde_plugins.pygments_code.PygmentsPlugin
 context:
    data:
         author:
@@ -69,6 +70,7 @@ markdown:
     extensions:
         - abbr
         - footnotes
+        - fenced_code
 # changes the extension of the generated files, but not the links pointing to
 # those files
 suffix:

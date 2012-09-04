@@ -8,6 +8,7 @@ plugins:
     - hyde.ext.plugins.urls.UrlCleanerPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
     - extra_hyde_plugins.suffix.SuffixPlugin
+    - extra_hyde_plugins.pygments_code.PygmentsPlugin
     # Requires lessc: npm install less -g
     - extra_hyde_plugins.less.LessCSSPlugin
     # Requires PIL: sudo pip install pil

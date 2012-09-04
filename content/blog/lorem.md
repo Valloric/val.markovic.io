@@ -16,6 +16,23 @@ Aliquam sed nisi mauris.
 Nulla sit amet lacus at massa pharetra mattis at eu tortor. Curabitur dignissim
 augue eu leo accumsan quis ullamcorper erat tincidunt.
 
+~~~~~.python
+from django.shortcuts import render
+from django.cache import cache
+from myproject.twitter import fetch_tweets
+
+def show_tweets(request, username):
+    return render(request, 'tweets.html',
+                  {'tweets': fetch_cached_tweets(username)})
+
+def fetch_cached_tweets(username):
+    tweets = cache.get(username)
+    if tweets is None:
+        tweets = fetch_tweets(username)
+        cache.set(username, tweets, 60*15)
+    return tweets
+~~~~~
+
 Vill koum wéi ke, [mauris jit aggt apte qugue]([[/about]]) dir ze welle fergiess
 zwëschen. Op brét Feierwon mir, hin mä welle Gaart erwaacht. Da hie stét Kënnt
 Freiesch, rifft kommen grousse am gét, huet bléit d'Margréitchen blo ze. Brét
