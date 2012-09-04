@@ -22,15 +22,16 @@ from django.cache import cache
 from myproject.twitter import fetch_tweets
 
 def show_tweets(request, username):
-    return render(request, 'tweets.html',
-                  {'tweets': fetch_cached_tweets(username)})
+  return render(request,
+                'tweets.html',
+                {'tweets': fetch_cached_tweets(username)})
 
 def fetch_cached_tweets(username):
-    tweets = cache.get(username)
-    if tweets is None:
-        tweets = fetch_tweets(username)
-        cache.set(username, tweets, 60*15)
-    return tweets
+  tweets = cache.get(username)
+  if tweets is None:
+    tweets = fetch_tweets(username)
+    cache.set(username, tweets, 60*15)
+  return tweets
 ~~~~~
 
 Vill koum wéi ke, [mauris jit aggt apte qugue]([[/about]]) dir ze welle fergiess
@@ -44,6 +45,13 @@ libero quis quam facilisis blandit. Nunc adipiscing dolor et magna tincidunt
 venenatis. Ut vel magna et neque fringilla porttitor. Nam suscipit consectetur
 justo eget rutrum. Morbi eu eros nec nunc molestie blandit. Suspendisse lectus
 mi, sollicitudin at cursus non, congue at tortor.
+
+~~~~~.python
+def fetch_cached_tweets(username):
+  tweets = cache.get(username)
+  one_long_name_is_very_long = one_long_name_is_very_long + second_long_name_is_very_long
+  return tweets
+~~~~~
 
 Integer lacinia, dolor ac consequat mollis, neque ante sodales odio, eget semper
 quam est eu quam. Quisque et nisl sit amet urna condimentum gravida. Nam euismod
