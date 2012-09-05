@@ -18,7 +18,6 @@ Aliquam sed nisi mauris.
 Nulla sit amet lacus at massa pharetra mattis at eu tortor. Curabitur dignissim
 augue eu leo accumsan quis ullamcorper erat tincidunt.
 
-
 ~~~~~.python
 from django.shortcuts import render
 from django.cache import cache
