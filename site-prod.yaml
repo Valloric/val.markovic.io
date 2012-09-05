@@ -33,3 +33,10 @@ less:
 uglify:
     args:
         no-copyright: ""
+optipng:
+    args:
+        quiet: ""
+jpegoptim:
+    args:
+        max: "80"
+        strip-all: ""
