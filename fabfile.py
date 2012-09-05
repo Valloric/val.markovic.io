@@ -1,6 +1,6 @@
 from fabric.api import lcd, local
 
-import os
+from os import path
 import hashlib
 
 DEV_CONF = 'site.yaml'
@@ -28,20 +28,22 @@ def prod_gen():
   local( 'hyde gen -c {0}'.format( PROD_CONF ) )
 
   with lcd( 'prod_deploy' ):
+    hash_store = {}
     for glob_path in [ 'media/js/*',
                        'media/less/*',
                        'media/img/*' ]:
       files = local( 'echo {0}'.format( glob_path ), capture=True ).split( ' ' )
       for filepath in files:
-        file_hash = _hash_for_file( os.path.join( 'prod_deploy', filepath ) )
+        file_hash = _hash_for_file( path.join( 'prod_deploy', filepath ) )
+        hash_store[ filepath ] = file_hash
         print '[+] Hash for {0} is {1}'.format( filepath, file_hash )
 
-        newname = _get_new_filename( filepath, file_hash )
-        local( 'mv {0} {1}'.format( filepath, newname ) )
+        new_path = _get_new_filepath( filepath, file_hash, hash_store )
+        local( 'mv {0} {1}'.format( filepath, new_path ) )
         local( r"find . -type f -print0 | xargs -0 sed -i '' -e "
                '"'
                r's:/{0}:/{1}:g'
-               '"'.format( filepath, newname ) )
+               '"'.format( filepath, new_path ) )
 
       # Fix permissions
       local( r'find * -type f -print0 | xargs -0 chmod a+r' )
@@ -64,17 +66,32 @@ def _hash_for_file( filepath ):
   return hashlib.sha1( open( filepath, 'r' ).read() ).hexdigest()[ :8 ]
 
 
-def _get_new_filename( filepath, file_hash ):
-  # TODO: fix the problem with @2x images having a different hash prefix from
-  # the non-@2x version
-  path_without_extension, extension = os.path.splitext( filepath )
+def _get_new_filepath( filepath, file_hash, hash_store ):
+  """Computes the new filepath for the give path. The new path has the hash of
+  the file inserted before the file extension, eg. foo.jpg -> foo.12345678.jpg
+
+  There's a small complication because of images that use the @2x suffix; those
+  images have to have the same prefix as the smaller images wiouth the '@2x'.
+  For instance, retina.js will replace all references to foo.jpg with foo@2x.jpg
+  on HiDPI screens. This means that something like foo.12345678.jpg will be
+  replaced with foo.12345678@2x.jpg, so the bigger image needs to use the hash
+  of the smaller version.
+
+  This is not a problem because the visual content of the smaller and the @2x
+  versions of the image will always be in sync even if the byte-wise content is
+  not. So the @2x version will change only when the smaller one changes as
+  well."""
+
+  path_without_extension, extension = path.splitext( filepath )
   at2x = ''
+  hash_to_use = file_hash
   if path_without_extension.endswith( '@2x' ):
     at2x = '@2x'
     path_without_extension = path_without_extension.replace( '@2x', '' )
+    hash_to_use = hash_store[ filepath.replace( '@2x', '' ) ]
 
   return '{0}.{1}{2}{3}'.format( path_without_extension,
-                                 file_hash,
+                                 hash_to_use,
                                  at2x,
                                  extension )
 
