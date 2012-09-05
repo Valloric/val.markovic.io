@@ -1,5 +1,7 @@
 extends: "site.yaml"
 mode: production
+# This is the folder where the site will be generated
+deploy_root: prod_deploy
 plugins:
     - hyde.ext.plugins.meta.MetaPlugin
     - extra_hyde_plugins.git.GitDatesPlugin
