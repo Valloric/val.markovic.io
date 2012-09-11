@@ -125,9 +125,15 @@ hr {
   }
 }
 
-h2, p, dl {
+p, dl {
   margin-bottom: @main-line-height;
   margin-top: 0;
+}
+
+h2 {
+  font-size: @h2-font-size;
+  margin-top: @h2-margin * 1.5;
+  margin-bottom: @h2-margin / 2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -137,10 +143,9 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: @h1-font-size;
-  margin-bottom: @main_header_full_height - @h1-font-size;
+  margin-bottom: @h1-margin;
   text-align: center;
-  line-height: 1.2em;
-  margin-top: -0.19em; // because of increased line-height
+  line-height: @h1-line-height;
 }
 
 #post-title {
