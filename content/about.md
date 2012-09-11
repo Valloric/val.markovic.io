@@ -30,7 +30,12 @@ About
   contribute to various <a href="{{ content_url('/projects') }}">open source
     projects</a> in my spare time and I've even started a few myself.</p>
 
+  {# SSE -> CloudFlare's Server-Side Exclude.
+    This will prevent the included code from showing up for suspicious
+    visitors.  #}
+  <!--sse-->
   <p>If you need to contact me,
   <a href="mailto:val@markovic.io" itemprop="email" >email</a> is
   probably the best way to do it.</p>
+  <!--/sse-->
 </section>
