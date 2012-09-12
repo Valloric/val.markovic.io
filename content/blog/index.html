@@ -8,7 +8,8 @@ summary: "All the blog posts of Val Markovic, creator of
 
 <h1 id="posts-heading">Blog posts</h1>
 <ol id="post-list">
-  {% for resource in site.content.node_from_relative_path('blog').walk_resources_sorted_by_date() %}
+  {% for resource in
+  site.content.node_from_relative_path('blog').walk_resources_sorted_by_date() | reverse %}
   <li class="post-item">
     <div class="clearfix">
       <span class="post-date">{{ resource.meta.created.strftime("%B %d, %Y") }}</span>
