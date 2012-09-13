@@ -10,6 +10,9 @@ summary: "All the blog posts of Val Markovic, creator of
 <ol id="post-list">
   {% for resource in
   site.content.node_from_relative_path('blog').walk_resources_sorted_by_date() | reverse %}
+
+  {# We don't want to list blog posts in prod that have been tagged as 'ignore' #}
+  {% if not ( site.config.mode == "production" and resource.meta.ignore ) -%}
   <li class="post-item">
     <div class="clearfix">
       <span class="post-date">{{ resource.meta.created.strftime("%B %d, %Y") }}</span>
@@ -17,5 +20,7 @@ summary: "All the blog posts of Val Markovic, creator of
     </div>
     <p class="post-summary">{{ resource.meta.summary }}</p>
   </li>
+  {%- endif %}
+
   {% endfor %}
 </ol>
