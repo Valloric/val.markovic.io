@@ -48,13 +48,49 @@ def prod_gen():
       # Fix permissions
       local( r'find * -type f -print0 | xargs -0 chmod a+r' )
       local( r'find * -type d -print0 | xargs -0 chmod a+rx' )
+      # fucking .DS_Store...
+      local( 'find . -name ".DS_Store" -print0 | xargs -0 rm -rf' )
 
+
+def _s3cmd_sync( path, dest_path=None, extra_options=[] ):
+  options = ' '.join( extra_options )
+  if dest_path is None:
+    dest_path = path.replace( 'prod_deploy/', '' )
+
+  local( 's3cmd '
+         '--guess-mime-type '
+         '--mime-type=text/html ' # this is the default MIME if guess fails
+         '--acl-public '
+         '{0} '
+         'sync '
+         '{1} '
+         's3://val.markovic.io/{2}'.format( options, path, dest_path ) )
 
 def prod_current():
-  """Push to production, but use the current state of the 'deploy' folder."""
-  # TODO: implement this
-  pass
+  """Push to production, but use the current state of the 'prod_deploy'
+  folder."""
 
+  # no --delete-remove!
+  _s3cmd_sync( 'prod_deploy/',
+               extra_options=[
+                 "--exclude='favicon*'",
+                 "--exclude='media/*'",
+                 "--exclude='blog/*'" ] )
+
+  _s3cmd_sync( 'prod_deploy/blog/',
+               extra_options=[ '--delete-removed' ] )
+
+  _s3cmd_sync( 'prod_deploy/favicon*',
+               dest_path='',
+               extra_options=[
+                 # max-age is one week
+                 "--add-header='Cache-Control:public;max-age=604800'" ] )
+
+  _s3cmd_sync( 'prod_deploy/media/',
+               extra_options=[
+                 '--delete-removed',
+                 # max-age is one year, the RFC maximum
+                 "--add-header='Cache-Control:public;max-age=31536000'" ] )
 
 def prod_push():
   """Push to production. This first regenerates the site."""
