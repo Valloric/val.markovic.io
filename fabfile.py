@@ -52,22 +52,36 @@ def prod_gen():
       local( 'find . -name ".DS_Store" -print0 | xargs -0 rm -rf' )
 
 
-def _s3cmd_operation( operation, path, dest_path=None, extra_options=[] ):
+def _s3cmd_operation( operation,
+                      path,
+                      dest_path=None,
+                      extra_options=[],
+                      force_mime=None ):
   options = ' '.join( extra_options )
   if dest_path is None:
     dest_path = path.replace( 'prod_deploy/', '' )
 
+  if force_mime is None:
+    guess_mime_arg = '--guess-mime-type'
+    mime = 'text/html' # this is the default MIME if guess fails
+  else:
+    guess_mime_arg = ''
+    mime = force_mime
+
   local( 's3cmd '
-         '--guess-mime-type '
-         '--mime-type=text/html ' # this is the default MIME if guess fails
+         '{guess_mime} '
+         "--mime-type='{mime}' "
          '--acl-public '
-         '{0} '
-         '{1} '
-         '{2} '
-         's3://val.markovic.io/{3}'.format( options,
-                                            operation,
-                                            path,
-                                            dest_path ) )
+         '{options} '
+         '{operation} '
+         '{path} '
+         's3://val.markovic.io/{dest_path}'.format(
+           options=options,
+           operation=operation,
+           path=path,
+           dest_path=dest_path,
+           mime=mime,
+           guess_mime=guess_mime_arg ) )
 
 
 def _s3cmd_sync( path, dest_path=None, extra_options=[] ):
@@ -84,6 +98,10 @@ def prod_current():
                  "--exclude='favicon*'",
                  "--exclude='media/*'",
                  "--exclude='blog/*'" ] )
+
+  _s3cmd_operation( 'put',
+                    'prod_deploy/blog/atom.xml',
+                    force_mime="application/atom+xml" )
 
   _s3cmd_sync( 'prod_deploy/blog/',
                extra_options=[
