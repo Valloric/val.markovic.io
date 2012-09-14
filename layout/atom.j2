@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>{{ site.meta.name|e }}</title>
+    <link href="{{ site.config.full_base }}{{ content_url(resource.url) }}" rel="self" />
+    <link href="{{ site.config.full_base }}" />
+    <id>{{ site.config.full_base }}{{ content_url(resource.url) }}</id>
+    <updated>{{ now|xmldatetime }}</updated>
+
+    {% for res in resource.node.walk_resources_sorted_by_date() | reverse | top(6) %}
+    {% if not res.meta.ignore %}
+    <entry>
+        <title type="html">{{ res.meta.title|e }}</title>
+        <author><name>{{ site.meta.author|e }}</name></author>
+        <link href="{{ site.config.full_base }}{{ content_url(res.url) }}"/>
+        <updated>{{ res.meta.created|xmldatetime }}</updated>
+        <published>{{ res.meta.created|xmldatetime }}</published>
+        <summary>{{ res.meta.summary|e }}</summary>>
+
+        <id>{{ site.config.full_base }}{{ content_url(res.url) }}</id>
+
+        <content type="html">
+<![CDATA[
+{{ res.text_without_meta|markdown|typogrify }}
+]]>
+        </content>
+    </entry>
+    {% endif %}
+    {% endfor %}
+</feed>

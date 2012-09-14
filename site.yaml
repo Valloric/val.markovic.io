@@ -2,8 +2,9 @@ mode: dev
 media_root: media
 media_url: /media
 base_url: /
+full_base: http://val.markovic.io
 plugins:
-    - hyde.ext.plugins.meta.MetaPlugin
+    - extra_hyde_plugins.meta.MetaPlugin
     - extra_hyde_plugins.git.GitDatesPlugin
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.sorter.SorterPlugin
@@ -30,6 +31,8 @@ meta:
     ga_tracking_code: UA-34688172-2
     created: git
     modified: git
+    name: Val Markovic
+    author: Val Markovic
 sorter:
     name: # the name of the sorter (no pun intended)
         attr: name # by which attributes will resources be sorted

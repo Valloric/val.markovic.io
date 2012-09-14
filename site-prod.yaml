@@ -3,7 +3,7 @@ mode: production
 # This is the folder where the site will be generated
 deploy_root: prod_deploy
 plugins:
-    - hyde.ext.plugins.meta.MetaPlugin
+    - extra_hyde_plugins.meta.MetaPlugin
     - extra_hyde_plugins.git.GitDatesPlugin
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.sorter.SorterPlugin
