@@ -52,7 +52,7 @@ def prod_gen():
       local( 'find . -name ".DS_Store" -print0 | xargs -0 rm -rf' )
 
 
-def _s3cmd_sync( path, dest_path=None, extra_options=[] ):
+def _s3cmd_operation( operation, path, dest_path=None, extra_options=[] ):
   options = ' '.join( extra_options )
   if dest_path is None:
     dest_path = path.replace( 'prod_deploy/', '' )
@@ -62,9 +62,17 @@ def _s3cmd_sync( path, dest_path=None, extra_options=[] ):
          '--mime-type=text/html ' # this is the default MIME if guess fails
          '--acl-public '
          '{0} '
-         'sync '
          '{1} '
-         's3://val.markovic.io/{2}'.format( options, path, dest_path ) )
+         '{2} '
+         's3://val.markovic.io/{3}'.format( options,
+                                            operation,
+                                            path,
+                                            dest_path ) )
+
+
+def _s3cmd_sync( path, dest_path=None, extra_options=[] ):
+  _s3cmd_operation( 'sync', path, dest_path, extra_options )
+
 
 def prod_current():
   """Push to production, but use the current state of the 'prod_deploy'
@@ -78,7 +86,8 @@ def prod_current():
                  "--exclude='blog/*'" ] )
 
   _s3cmd_sync( 'prod_deploy/blog/',
-               extra_options=[ '--delete-removed' ] )
+               extra_options=[
+                 '--delete-removed' ] )
 
   _s3cmd_sync( 'prod_deploy/favicon*',
                dest_path='',
