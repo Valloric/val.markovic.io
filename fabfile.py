@@ -61,16 +61,21 @@ def _s3cmd_operation( operation,
   if dest_path is None:
     dest_path = path.replace( 'prod_deploy/', '' )
 
+  mime_arg = "--mime-type='{0}'"
   if force_mime is None:
     guess_mime_arg = '--guess-mime-type'
-    mime = 'text/html' # this is the default MIME if guess fails
+    mime_arg = mime_arg.format( 'text/html' ) # this is the default MIME if guess fails
   else:
     guess_mime_arg = ''
-    mime = force_mime
+    if force_mime:
+      mime_arg = mime_arg.format( force_mime )
+    else:
+      # when force_mime is an empty string, don't add any mime
+      mime_arg = ''
 
   local( 's3cmd '
          '{guess_mime} '
-         "--mime-type='{mime}' "
+         '{mime_arg} '
          '--acl-public '
          '{options} '
          '{operation} '
@@ -80,12 +85,12 @@ def _s3cmd_operation( operation,
            operation=operation,
            path=path,
            dest_path=dest_path,
-           mime=mime,
+           mime_arg=mime_arg,
            guess_mime=guess_mime_arg ) )
 
 
-def _s3cmd_sync( path, dest_path=None, extra_options=[] ):
-  _s3cmd_operation( 'sync', path, dest_path, extra_options )
+def _s3cmd_sync( path, dest_path=None, extra_options=[], force_mime=None ):
+  _s3cmd_operation( 'sync', path, dest_path, extra_options, force_mime )
 
 
 def prod_current():
@@ -97,15 +102,16 @@ def prod_current():
                extra_options=[
                  "--exclude='favicon*'",
                  "--exclude='media/*'",
-                 "--exclude='blog/*'" ] )
+                 "--exclude='blog/*'" ],
+               force_mime='text/html; charset=utf-8' )
 
   _s3cmd_operation( 'put',
                     'prod_deploy/blog/atom.xml',
                     force_mime="application/atom+xml" )
 
   _s3cmd_sync( 'prod_deploy/blog/',
-               extra_options=[
-                 '--delete-removed' ] )
+               extra_options=[ '--delete-removed' ],
+               force_mime='text/html; charset=utf-8' )
 
   _s3cmd_sync( 'prod_deploy/favicon*',
                dest_path='',
