@@ -61,12 +61,12 @@ def _s3cmd_operation( operation,
   if dest_path is None:
     dest_path = path.replace( 'prod_deploy/', '' )
 
-  mime_arg = "--mime-type='{0}'"
+  mime_arg = ''
   if force_mime is None:
     guess_mime_arg = '--guess-mime-type'
-    mime_arg = mime_arg.format( 'text/html' ) # this is the default MIME if guess fails
   else:
     guess_mime_arg = ''
+    mime_arg = "--mime-type='{0}'"
     if force_mime:
       mime_arg = mime_arg.format( force_mime )
     else:

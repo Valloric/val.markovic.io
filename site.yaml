@@ -5,7 +5,8 @@ base_url: /
 full_base: http://val.markovic.io
 plugins:
     - extra_hyde_plugins.meta.MetaPlugin
-    - extra_hyde_plugins.git.GitDatesPlugin
+    # Requires pytz: sudo pip install pytz
+    - extra_hyde_plugins.gitext.GitDatesPlugin
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.sorter.SorterPlugin
     - hyde.ext.plugins.urls.UrlCleanerPlugin
