@@ -1,4 +1,4 @@
-from fabric.api import lcd, local
+from fabric.api import lcd, local, prefix
 
 from os import path
 import hashlib
@@ -27,29 +27,33 @@ def prod_gen():
   local( 'rm -rf prod_deploy/*' )
   local( 'hyde gen -c {0}'.format( PROD_CONF ) )
 
-  with lcd( 'prod_deploy' ):
-    hash_store = {}
-    for glob_path in [ 'media/js/*',
-                       'media/less/*',
-                       'media/img/*' ]:
-      files = local( 'echo {0}'.format( glob_path ), capture=True ).split( ' ' )
-      for filepath in files:
-        file_hash = _hash_for_file( path.join( 'prod_deploy', filepath ) )
-        hash_store[ filepath ] = file_hash
-        print '[+] Hash for {0} is {1}'.format( filepath, file_hash )
+  # We need to unset LANG and set LC_CTYPE=C for Mac OS X Mountain Lion; see
+  # here for more details: https://github.com/Homebrew/homebrew-dupes/pull/21
+  # If we don't do this, we'll get "sed: RE error: illegal byte sequence"
+  with prefix( 'unset LANG && export LC_CTYPE="C"' ):
+    with lcd( 'prod_deploy' ):
+      hash_store = {}
+      for glob_path in [ 'media/js/*',
+                        'media/less/*',
+                        'media/img/*' ]:
+        files = local( 'echo {0}'.format( glob_path ), capture=True ).split( ' ' )
+        for filepath in files:
+          file_hash = _hash_for_file( path.join( 'prod_deploy', filepath ) )
+          hash_store[ filepath ] = file_hash
+          print '[+] Hash for {0} is {1}'.format( filepath, file_hash )
 
-        new_path = _get_new_filepath( filepath, file_hash, hash_store )
-        local( 'mv {0} {1}'.format( filepath, new_path ) )
-        local( r"find . -type f -print0 | xargs -0 sed -i '' -e "
-               '"'
-               r's:/{0}:/{1}:g'
-               '"'.format( filepath, new_path ) )
+          new_path = _get_new_filepath( filepath, file_hash, hash_store )
+          local( 'mv {0} {1}'.format( filepath, new_path ) )
+          local( r"find . -type f -print0 | xargs -0 sed -i '' -e "
+                '"'
+                r's:/{0}:/{1}:g'
+                '"'.format( filepath, new_path ) )
 
-      # Fix permissions
-      local( r'find * -type f -print0 | xargs -0 chmod a+r' )
-      local( r'find * -type d -print0 | xargs -0 chmod a+rx' )
-      # fucking .DS_Store...
-      local( 'find . -name ".DS_Store" -print0 | xargs -0 rm -rf' )
+        # Fix permissions
+        local( r'find * -type f -print0 | xargs -0 chmod a+r' )
+        local( r'find * -type d -print0 | xargs -0 chmod a+rx' )
+        # fucking .DS_Store...
+        local( 'find . -name ".DS_Store" -print0 | xargs -0 rm -rf' )
 
 
 def _s3cmd_operation( operation,
