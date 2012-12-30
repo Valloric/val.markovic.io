@@ -45,11 +45,20 @@ listing. None of the books I'm recommending should be controversial and I'm not
 affiliated with any of them; there are no referral links here and I have no skin
 in this game.
 
+There's a very good reason why I'm giving you a list of books to read instead of
+just summarizing the great advice that's in them: never take investment advice
+you don't understand. You _need_ to understand _why_ portfolio X makes sense,
+why investment Y doesn't, why actively managed funds underperform etc. You need
+_depth_ here, not superficial "I think I get it" understanding. Your financial
+future depends upon you fully grasping these concepts.
+
 The Basics
 ----------
 
 These are must-read books. I'm presenting them in a sensible reading order that
-will slowly teach you more and more, building on what you have previously read:
+will slowly teach you more and more, building on what you have previously read.
+None of them are difficult reads; in fact, all of them are surprisingly well
+written and entertaining.
 
 *   [_The Only Investment Guide You'll Ever Need_][guide] by Andrew Tobias: Yes,
     I know, the title is terrible (and patently false). To the author's credit,
