@@ -110,8 +110,8 @@ will slowly teach you more and more, building on what you have previously read:
 
 After reading the _Guide_, the _Pillars_ and the _Walk_, you can confidently
 stop. This is my three-book list for investment newcomers. After completing
-this book series you'll know more about investing than most "professional" money
-managers. If you implement the advice in this book, your returns will also beat
+this book bundle you'll know more about investing than most "professional" money
+managers. If you implement the advice in these books, your returns will also beat
 the returns of ~80% of actively managed funds, _over the long term_
 (20+ years).[^returns]
 
