@@ -39,5 +39,20 @@
       }
     }
   }
+
+  // By default, we hang list bullets/numbers to the left of the main content
+  // pane. This makes them invisible on mobile browsers since they cut off the
+  // left/right margins. So we don't hang on mobiles.
+  //
+  // NOTE: A firefox bug causes the bullet/number to show up on a line above the
+  // text, instead of "inside" the first line, pushing the first word to the
+  // right. So,
+  //  1. Since this rule is used only for mobile devices,
+  //  2. This is a FF bug (see http://stackoverflow.com/q/1142314/1672783)
+  //  3. Nobody uses FF on a mobile device,
+  // I'm promptly deciding not to care.
+  ul, ol {
+    list-style-position: inside;
+  }
 }
 
