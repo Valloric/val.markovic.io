@@ -25,3 +25,5 @@ _probably_ biases my viewpoints in some unquantifiable way, at least on a
 subconscious level. Keep that in mind.
 
 No, I still don't speak for them.
+
+I reserve the right to not have a clue. Be forewarned, I exercise it frequently.
