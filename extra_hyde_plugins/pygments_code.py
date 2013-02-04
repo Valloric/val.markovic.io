@@ -39,6 +39,7 @@ from hyde.plugin import Plugin
 
 import re
 import pygments
+import HTMLParser
 from pygments import lexers
 from pygments import formatters
 
@@ -64,6 +65,8 @@ class PygmentsPlugin( Plugin ):
           (.*?)   # the actual content of the element
           </code>""",
       re.VERBOSE | re.DOTALL )
+    self.html_parser = HTMLParser.HTMLParser()
+
 
   def text_resource_complete( self, resource, text ):
     """
@@ -74,12 +77,15 @@ class PygmentsPlugin( Plugin ):
     def replace_func( match_object ):
       language = match_object.group( 1 )
       content = match_object.group( 2 )
+      # We need to unescape the content first because it's already escaped, and
+      # Pygments will escape it too, and we don't want it to be double-escaped.
+      raw_content = self.html_parser.unescape( content )
       lexer = ( lexers.get_lexer_by_name( language ) if language else
-                lexers.guess_lexer( content ) )
+                lexers.guess_lexer( raw_content ) )
 
       formatter = formatters.HtmlFormatter( nowrap=True )
-      highlighted_code = pygments.highlight( content, lexer, formatter )
+      highlighted_code = pygments.highlight( raw_content, lexer, formatter )
       return '<code class="{0}">{1}</code>'.format( language,
-                                                    highlighted_code )
+                                                    highlighted_code.strip() )
 
     return re.sub( self.pattern, replace_func, text )

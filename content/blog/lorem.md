@@ -43,6 +43,10 @@ Freiesch, rifft[^2] kommen grousse am gét, huet bléit d'Margréitchen blo ze. 
 d'Gaassen dén do, sin Well zielen d'Natur do, Klarinett Kirmesdag Margréitchen
 de dén.
 
+~~~~.html
+<div>This is some HTML.</div>
+~~~~
+
 [^2]: Cras enim diam, cursus id condimentum ac, gravida et quam.
     Suspendisse ultricies libero quis quam facilisis blandit.
     Nam lectus mi, sollicitudin at cursus non, congue at tortor.
