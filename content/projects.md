@@ -63,6 +63,14 @@ clients.
 I transitioned FlightCrew to a new maintainer near the end of 2011 and today I'm not
 involved with its development anymore.
 
+[YouCompleteMe][ycm]
+--------------------
+
+YouCompleteMe is a fast, as-you-type, fuzzy-search code completion engine
+for Vim. It has two completion engines: an identifier-based engine that
+works with every programming language and a semantic, [Clang][]-based engine
+that provides semantic code completion for C/C++/Objective-C/Objective-C++.
+
 [MatchTagAlways][mta]
 --------------------
 
@@ -85,3 +93,5 @@ by default.
 [flightcrew]: http://code.google.com/p/flightcrew/
 [crap]: http://sigildev.blogspot.com/2010/10/introducing-flightcrew-epub-validator.html
 [boost]: http://www.boost.org/
+[ycm]: http://valloric.github.com/YouCompleteMe/
+[Clang]: http://clang.llvm.org/
