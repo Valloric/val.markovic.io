@@ -42,12 +42,16 @@ a:not(.raw-link) {
   }
 
   &:visited {
-    color: @link-color;
+    color: @visited-link-color;
     text-decoration: none;
   }
 
   &:hover {
     border-bottom: 1px solid @link-color;
+  }
+
+  &:visited:hover {
+    border-bottom: 1px solid @visited-link-color;
   }
 }
 
