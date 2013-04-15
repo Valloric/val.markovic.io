@@ -8,7 +8,7 @@ inside the angle brackets."
 Just recently I started editing HTML much more than I usually do[^html] and I
 noticed Vim was missing an awesome feature Notepad++ had. The last time I used
 Notepad++ was many years ago, but I still remember it used to highlight the
-other tag in the pair when your cursor was inside the one of them.
+other tag in the pair when your cursor was inside one of them.
 
 [^html]: I write it in bursts, but day-to-day I mostly write C++ or Python.
 
