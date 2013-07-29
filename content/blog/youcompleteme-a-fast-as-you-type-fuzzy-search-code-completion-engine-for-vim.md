@@ -144,11 +144,11 @@ provide #1 and it kinda sorta sometimes does a half-decent job at #4. I've used
 neocomplcache for over eight months and my frustrations with it directly led to
 the decision to build YCM.
 
-SuperTab I have limited experience with, but from I understand, it does a
+SuperTab I have limited experience with, but from what I understand, it does a
 half-decent job at #4, much like neocomplcache.
 
 YCM fulfills all of these requirements. #4 is currently only fulfilled for
-C-family languages, but YCM has an internal completer API that is designed so
+C-family languages, but YCM has an internal Completer API that is designed so
 that completers for other filetypes can easily be implemented and hooked-up to
 the rest of the system. A Python semantic completer will probably be built some
 time in the future,[^rope] and others can help out with completers for other
