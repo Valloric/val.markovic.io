@@ -2,9 +2,15 @@ from fabric.api import lcd, local, prefix
 
 from os import path
 import hashlib
+import platform
 
 DEV_CONF = 'site.yaml'
 PROD_CONF = 'site-prod.yaml'
+
+# Mac sed and Linux sed don't have a compatible way of saying "modify in-place
+# without a backup" so we have to do it in two different ways.
+# See here for details: http://stackoverflow.com/q/5694228/1672783
+SED_INPLACE_ARG = '-i' if platform.system() != 'Darwin' else "-i ''"
 
 def dev_regen():
   """Regenerate dev content"""
@@ -19,7 +25,9 @@ def dev_gen():
 
 def serve():
   """Serve dev content"""
-  local( 'hyde serve' )
+  # By default, hyde serves from localhost instead of 0.0.0.0. This means that
+  # we can't access it from other devices. With 0.0.0.0 we can.
+  local( 'hyde serve -a 0.0.0.0' )
 
 
 def prod_gen():
@@ -44,10 +52,10 @@ def prod_gen():
 
           new_path = _get_new_filepath( filepath, file_hash, hash_store )
           local( 'mv {0} {1}'.format( filepath, new_path ) )
-          local( r"find . -type f -print0 | xargs -0 sed -i '' -e "
+          local( r"find . -type f -print0 | xargs -0 sed {2} -e "
                 '"'
                 r's:/{0}:/{1}:g'
-                '"'.format( filepath, new_path ) )
+                '"'.format( filepath, new_path, SED_INPLACE_ARG ) )
 
         # Fix permissions
         local( r'find * -type f -print0 | xargs -0 chmod a+r' )

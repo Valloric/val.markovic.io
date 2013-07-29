@@ -30,7 +30,7 @@
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 from hyde.plugin import CLTransformer
-from hyde.fs import File
+from fswrap import File
 
 from operator import attrgetter
 
