@@ -12,7 +12,6 @@ chardet==2.0.1
 commando==0.3.4
 fswrap==0.1.1
 hyde==0.8.7
-language-selector==0.1
 markdown2==2.1.0
 paramiko==1.11.0
 pyOpenSSL==0.13
