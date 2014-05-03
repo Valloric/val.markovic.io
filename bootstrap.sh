@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 apt-get update
+apt-get dist-upgrade
 apt-get install -yqq git
 apt-get install -yqq tmux
 apt-get install -yqq apache2
@@ -12,13 +13,18 @@ apt-get install -yqq python-dev
 apt-get install -yqq python-setuptools
 apt-get install -yqq curl
 
-curl -O https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+curl -O -L https://raw.githubusercontent.com/pypa/pip/master/contrib/get-pip.py
 python get-pip.py
 
 # PIL requires special handling, otherwise fetching fails.
 pip install --allow-all-external --allow-unverified PIL -r /vagrant/requirements.txt
 pip install httpie
 
+apt-get install -yqq nodejs
+
+# Needed so that the node binary is named 'node' and not 'nodejs'; necessary
+# because of scripts that call 'node'.
+apt-get install -yqq nodejs-legacy
 apt-get install -yqq npm
 
 # The easiest way to get node binaries on the PATH
@@ -38,8 +44,8 @@ then
 fi
 
 
-rm -rf /var/www
-ln -fs /vagrant/prod_deploy /var/www
+rm -rf /var/www/html
+ln -fs /vagrant/prod_deploy /var/www/html
 
 # Set the system timezone
 echo "America/Los_Angeles" | sudo tee /etc/timezone && dpkg-reconfigure --frontend noninteractive tzdata
