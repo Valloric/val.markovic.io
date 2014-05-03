@@ -38,7 +38,7 @@ if [[ ! -a /home/vagrant/s3cmd ]]
 then
   git clone https://github.com/s3tools/s3cmd
   cd s3cmd
-  git checkout 9ee3bdd320c82150a8d5c387dacc4d7f194cbecb
+  git checkout 6107af0a4dddfe21c556c64551153e7774db287f
   cd ..
   sudo ln -sf /home/vagrant/s3cmd/s3cmd /home/vagrant/bin/s3cmd
 fi

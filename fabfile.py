@@ -88,6 +88,11 @@ def _s3cmd_operation( operation,
   local( 's3cmd '
          '{guess_mime} '
          '{mime_arg} '
+         '--config=/vagrant/.s3cfg '
+         # We must not let s3cmd use libmagic for --guess-mime-type because it's
+         # shit; it guesses text/plain for .css and .js. The fallback works
+         # better.
+         '--no-mime-magic '
          '--acl-public '
          '{options} '
          '{operation} '
