@@ -2,6 +2,7 @@
 title: Recommended Books on Modern Investing and Personal Finance
 summary: "A list of books for optimizing one's financial success and happiness
 that everyone should read."
+created: !!timestamp '2012-12-29 10:00:00'
 ---
 
 We should all know more about prudent investing. You're saving for retirement,

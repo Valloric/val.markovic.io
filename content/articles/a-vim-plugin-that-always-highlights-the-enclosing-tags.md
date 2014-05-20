@@ -3,6 +3,7 @@ title: A Vim Plugin That Always Highlights the Enclosing Tags
 summary: "Always knowing what element you are in when editing HTML or XML is
 very useful. Other Vim plugins highlight the other tag only when the cursor is
 inside the angle brackets."
+created: !!timestamp '2012-09-12 10:00:00'
 ---
 
 Just recently I started editing HTML much more than I usually do[^html] and I

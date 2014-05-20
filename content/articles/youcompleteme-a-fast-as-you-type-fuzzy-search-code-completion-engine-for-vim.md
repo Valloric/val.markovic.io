@@ -4,6 +4,7 @@ for Vim"
 summary: "It has an identifier-based engine that works with every programming
 language and a Clang-based engine that provides semantic code completion for
 C and C++."
+created: !!timestamp '2013-02-04 10:00:00'
 ---
 
 [YouCompleteMe][ycm] is a fast, as-you-type, fuzzy-search code completion engine

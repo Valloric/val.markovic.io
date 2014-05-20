@@ -5,8 +5,6 @@ base_url: /
 full_base: http://val.markovic.io
 plugins:
     - extra_hyde_plugins.meta.MetaPlugin
-    # Requires pytz: sudo pip install pytz
-    - extra_hyde_plugins.gitext.GitDatesPlugin
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.sorter.SorterPlugin
     - hyde.ext.plugins.urls.UrlCleanerPlugin
@@ -30,8 +28,6 @@ meta:
     # number of files.
     nodemeta: meta.yaml
     ga_tracking_code: UA-34688172-2
-    created: git
-    modified: git
     name: Val Markovic
     author: Val Markovic
 sorter:
@@ -51,7 +47,7 @@ sorter:
         filters:
             source_file.kind: md
     date:
-        attr: meta.created # the 'created' attribute comes from the GitDatesPlugin
+        attr: meta.created # the 'created' is set in the article's meta section
         filters:
             source_file.kind: md
 # changes the links pointing to the files, but not the extensions/paths where
