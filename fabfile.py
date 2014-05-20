@@ -119,16 +119,16 @@ def prod_current():
                extra_options=[
                  "--exclude='favicon*'",
                  "--exclude='media/*'",
-                 "--exclude='blog/*'",
+                 "--exclude='articles/*'",
                  # max-age is one hour
                  "--add-header='Cache-Control:public;max-age=3600'" ],
                force_mime='text/html; charset=utf-8' )
 
   _s3cmd_operation( 'put',
-                    'prod_deploy/blog/atom.xml',
+                    'prod_deploy/articles/atom.xml',
                     force_mime="application/atom+xml" )
 
-  _s3cmd_sync( 'prod_deploy/blog/',
+  _s3cmd_sync( 'prod_deploy/articles/',
                extra_options=[
                  '--delete-removed',
                  # max-age is one hour
