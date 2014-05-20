@@ -96,7 +96,7 @@ written and entertaining.
     brokers and preferably the entire investment industry, lest it eat up
     considerable portions of your returns.
 
-    If you come away from this blog post with one book in mind, _let it be this
+    If you come away from this articles with one book in mind, _let it be this
     one_. It's the best and the most important one I can think of.
 
     I _cannot_ recommend this book highly enough. Instead of peddling vague and
@@ -130,7 +130,7 @@ words, we're talking about money _you end up caring about_.
 
 If you can read only two, go with the _Guide_ and the _Pillars_. If just one,
 then the _Pillars_. But preferably all of them. That's it, you can stop reading
-this blog post if you wish.
+this article if you wish.
 
 Greater Appetite
 ----------------
