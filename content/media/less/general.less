@@ -221,6 +221,12 @@ code {
 
 .footnote {
   font-size: 0.9em;
+
+  // Lists inside the footnote list should be indented and not at the same level
+  // as the main footnote list.
+  > ol ol {
+    margin-left: 1.4em;
+  }
 }
 
 ul, ol {
