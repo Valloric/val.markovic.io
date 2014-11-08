@@ -66,10 +66,10 @@ involved with its development anymore.
 [YouCompleteMe][ycm]
 --------------------
 
-YouCompleteMe is a fast, as-you-type, fuzzy-search code completion engine
-for Vim. It has two completion engines: an identifier-based engine that
-works with every programming language and a semantic, [Clang][]-based engine
-that provides semantic code completion for C/C++/Objective-C/Objective-C++.
+YouCompleteMe started as a fast, as-you-type, semantic, fuzzy-search code
+completion engine for Vim. I have since then [spun off the completion
+engine][ycmd-split] into an editor-agnostic server called [ycmd][] and other
+developers are writing clients for various editors.
 
 [MatchTagAlways][mta]
 --------------------
@@ -95,3 +95,5 @@ by default.
 [boost]: http://www.boost.org/
 [ycm]: http://valloric.github.com/YouCompleteMe/
 [Clang]: http://clang.llvm.org/
+[ycmd]: https://github.com/Valloric/ycmd
+[ycmd-split]: http://val.markovic.io/articles/youcompleteme-as-a-server
