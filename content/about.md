@@ -16,7 +16,7 @@ About
        alt="headshot" />
   <p>Hi, my name is
   <span itemprop="name">Strahinja <span itemprop="nickname">Val</span>
-  Markovic</span> and I am a <span itemprop="title">Software Engineer</span>
+  Marković</span> and I am a <span itemprop="title">Software Engineer</span>
   at <span itemprop="worksFor"><span itemprop="affiliation">Google</span></span>
   in the Search Quality division (roughly, the "Google Search" part). No, I
   can't make your website rank better.</p>
