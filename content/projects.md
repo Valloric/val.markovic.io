@@ -71,6 +71,14 @@ completion engine for Vim. I have since then [spun off the completion
 engine][ycmd-split] into an editor-agnostic server called [ycmd][] and other
 developers are writing clients for various editors.
 
+[Picture Commander][pc]
+-----------------------
+
+Picture Commander provides a way to select an image from a gallery
+on one device and have that image automatically displayed on the screen of a
+remote device (with server-push). No fancy apps are necessary, this is
+completely implemented with modern web technology. All you need is a browser.
+
 [MatchTagAlways][mta]
 --------------------
 
@@ -97,3 +105,4 @@ by default.
 [Clang]: http://clang.llvm.org/
 [ycmd]: https://github.com/Valloric/ycmd
 [ycmd-split]: http://val.markovic.io/articles/youcompleteme-as-a-server
+[pc]: https://github.com/Valloric/picture-commander
