@@ -4,7 +4,7 @@
 
 
 body {
-  .droid-serif;
+  .sans-serif;
   // This is just a fallback
   background: @bg-color;
   .at2x("[[!!img/bg_pattern.png]]");
@@ -26,16 +26,13 @@ body {
 }
 
 #main-nav {
-  .crete-round;
+  .primary-serif;
   margin: 0 auto;
 }
 
 
 // links with a "raw-link" class will not be styled
 a:not(.raw-link) {
-  .transition();
-  border-bottom: 1px solid transparent;
-
   &:link {
     color: @link-color;
     text-decoration: none;
@@ -47,11 +44,11 @@ a:not(.raw-link) {
   }
 
   &:hover {
-    border-bottom: 1px solid @link-color;
+    text-decoration: underline;
   }
 
   &:visited:hover {
-    border-bottom: 1px solid @visited-link-color;
+    text-decoration: underline;
   }
 }
 
@@ -141,7 +138,7 @@ h2 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  .crete-round;
+  .primary-serif;
   font-weight: normal;
 }
 
@@ -158,7 +155,7 @@ h1 {
 
 
 #time {
-  .simonetta;
+  .secondary-serif;
   color: @light-grey;
   margin-top: 0.7em; // TODO: should be in terms of main-line-height
   margin-bottom: @main_header_full_height / 2;
@@ -175,13 +172,6 @@ h1 {
   max-height: 100%;
 }
 
-p a {
-  // Needed because we use a border-bottom to underline the link on hover and
-  // without the padding the border touches descenders in letters like p, g, q
-  // etc.
-  padding-bottom: 0.12em;
-}
-
 .amp {
   font-size: 1.05em;
   font-family: "Warnock Pro","Goudy Old Style","Palatino","Book Antiqua",serif;
@@ -195,14 +185,8 @@ p a {
 }
 
 .caps {
-  // font-size of 1.1 em makes Mate SC have the same x-height of Droid Serif, so
-  // we add another 0.05 em to make it *slightly* taller than that, as is
-  // customary in Anglo-Saxon typography.
-  font-size: 1.15em;
-  font-family: "Mate SC",serif;
-  text-transform: lowercase;
   // small-caps need a bit extra tracking (letter-spacing)
-  letter-spacing: 0.1em;
+  letter-spacing: 0.07em;
 }
 
 pre {
@@ -244,7 +228,7 @@ ul {
 }
 
 footer {
-  .simonetta;
+  .secondary-serif;
   color: @light-grey;
   margin-top: @main-line-height;
   text-align: center;
