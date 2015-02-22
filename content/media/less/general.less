@@ -106,7 +106,7 @@ hr {
 
   &.main {
     height: 1px;
-    .background-gradient( ~"left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0)" );
+    .background-gradient( ~"left, #FFF, #222, #FFF" );
 
     &:after {
       content: "";
@@ -196,9 +196,9 @@ pre {
   margin: 0;
   margin-left: -@main-line-height;
   margin-bottom: @main-line-height;
-  background-color: @dark-grey;
+  background-color: @super-light-grey;
 
-  .box-shadow( ~"0 0 0.2em rgba(255, 255, 255, 0.12), 0 0 2.2em rgba(255, 255, 255, 0.10)" );
+  .light-grey-shadow;
   .rounded( 0.25em );
 }
 

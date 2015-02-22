@@ -1,10 +1,11 @@
 // TODO: rename these so that they use _ as word separator
 // main font size is 1em -> 16px
-@bg-color: #131313;
-@text-color: #eeeeee;
-@light-grey: darken(@text-color, 30%);
+@bg-color: #FDFDFD;
+@text-color: #222;
+@light-grey: lighten(@text-color, 30%);
+@super-light-grey: #F5F5F5;
 @dark-grey: #1a1919;
-@link-color: #00A7F7;
+@link-color: #008AFF;
 @visited-link-color: #8947FF;
 @h1-font-size: 1.75em;        // 16 * 1.75 = 28px
 @h1-line-height: 1.1428571428571428;  // 28px * 1.142... = 32
@@ -47,3 +48,6 @@
   background: linear-gradient( @arguments );
 }
 
+.light-grey-shadow() {
+  .box-shadow( ~"0 0 0.2em rgba(0, 0, 0, 0.12), 0 0 2.2em rgba(0, 0, 0, 0.10)" );
+}
