@@ -35,7 +35,7 @@ to edit that code.
 
 Here's an animated GIF of what I'm talking about:
 
-![MatchTagAlways screen shot](http://i.imgur.com/qAf0N.gif)
+![MatchTagAlways screen shot](//i.imgur.com/qAf0N.gif)
 
 Do you see how the enclosing tags are always highlighted, even when you are
 inside the element's content? That's what I wanted.

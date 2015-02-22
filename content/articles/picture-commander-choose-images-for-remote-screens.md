@@ -11,7 +11,7 @@ remote device. No fancy apps are necessary, this is completely implemented with
 modern web technology (hooray for [Server-Sent Events][sse]). All you need is a
 browser.
 
-[![Picture Commander screenshot](http://i.imgur.com/VHwKSt0l.png)](http://i.imgur.com/VHwKSt0.png)
+[![Picture Commander screenshot](//i.imgur.com/VHwKSt0l.png)](//i.imgur.com/VHwKSt0.png)
 
 The way it works is the following: there's one "admin" view (`/gallery` handler)
 and one "display" view (`/viewer` handler). Clicking on images in the gallery

@@ -9,7 +9,7 @@ summary: "Information about Val Markovic, creator of squishy bits made of
 About
 =====
 
-<section itemscope="" itemtype="http://data-vocabulary.org/Person">
+<section itemscope="" itemtype="//data-vocabulary.org/Person">
   <img itemprop="image"
        id="headshot"
        src="{{ media_url('img/headshot.jpg') }}"
