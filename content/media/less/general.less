@@ -131,8 +131,8 @@ p, dl {
 
 h2 {
   font-size: @h2-font-size;
-  margin-top: @h2-margin;
-  margin-bottom: @h2-margin / 2;
+  margin-top: @main-line-height;
+  margin-bottom: @main-line-height / 2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -156,20 +156,18 @@ h1 {
   .secondary-serif;
   color: @light-grey;
   margin-top: 0.7em;
-  margin-bottom: @main_header_full_height / 2;
-  font-size: @main-font-size * 0.8;
+  margin-bottom: @main-line-height;
+  font-size: @main-font-size * 0.9;
 }
 
 #post-body > p:first-of-type {
   font-size: 1.25em;
-  line-height: @main-line-height * 0.9;
+  line-height: @main-line-height-ratio * 0.9;
 }
 
 #post-body img {
   max-width: 100%;
   max-height: 100%;
-  margin-bottom: @main-line-height;
-  margin-top: @main-line-height;
 }
 
 .amp {

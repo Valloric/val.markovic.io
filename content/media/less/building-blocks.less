@@ -9,15 +9,14 @@
 @h1-line-height: 1.1428571428571428;
 @h1-margin: 1.2142857142857142em; // half of header height
 @h2-font-size: 1.375em;
-@h2-margin: 1.3636363636em;  // same as main-line-height in px
 
+@main-font-size: 19px;
 @main-line-height-ratio: 1.5625;
-@main-line-height: 1.5625em;  // 19 * 1.5625 = 29.6875px
-@main-font-size: 1.1875em; // 16 * 1.1875 = 19px
+@main-line-height: @main-font-size * @main-line-height-ratio;  // 19 * 1.5625 = 29.6875px
 
 @main_header_top_margin: @main-line-height / 2;
 @main_header_bottom_margin: @main-line-height / 2;
-@main_header_content_height: 1em;
+@main_header_content_height: @main-font-size;
 @main_header_full_height: @main_header_top_margin +
                           @main_header_content_height +
                           @main_header_bottom_margin;
