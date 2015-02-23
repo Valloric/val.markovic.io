@@ -1,5 +1,3 @@
-// TODO: rename these so that they use _ as word separator
-// main font size is 1em -> 16px
 @bg-color: #FDFDFD;
 @text-color: #222;
 @light-grey: lighten(@text-color, 30%);
@@ -7,21 +5,21 @@
 @dark-grey: #1a1919;
 @link-color: #008AFF;
 @visited-link-color: #8947FF;
-@h1-font-size: 1.75em;        // 16 * 1.75 = 28px
-@h1-line-height: 1.1428571428571428;  // 28px * 1.142... = 32
-@h1-margin: 1.2142857142857142em; // 28px * 1.214... = 34px (half of header height)
-@h2-font-size: 1.375em;      // 16 * 1.375 = 22px
-@h2-margin: 1.3636363636em;  // 22px * 1.36 = 25px
+@h1-font-size: 1.75em;
+@h1-line-height: 1.1428571428571428;
+@h1-margin: 1.2142857142857142em; // half of header height
+@h2-font-size: 1.375em;
+@h2-margin: 1.3636363636em;  // same as main-line-height in px
 
-@main-line-height: 1.5625em;  // 16 * 1.6 = 25px
-@main-font-size: 1em;
+@main-line-height: 1.5625em;  // 19 * 1.5625 = 29.6875px
+@main-font-size: 1.1875em; // 16 * 1.1875 = 19px
 
 @main_header_top_margin: @main-line-height;
 @main_header_bottom_margin: @main-line-height;
 @main_header_content_height: 1em;
 @main_header_full_height: @main_header_top_margin +
                           @main_header_content_height +
-                          @main_header_bottom_margin; // = 68px
+                          @main_header_bottom_margin;
 
 .secondary-serif() {
   font-family: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
