@@ -27,6 +27,9 @@ apt-get install -yqq nodejs
 apt-get install -yqq nodejs-legacy
 apt-get install -yqq npm
 
+npm install uglify-js -g
+npm install less -g
+
 # The easiest way to get node binaries on the PATH
 mkdir -p /home/vagrant/bin
 
