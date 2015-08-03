@@ -17,9 +17,8 @@ About
   <p>Hi, my name is
   <span itemprop="name">Strahinja <span itemprop="nickname">Val</span>
   Marković</span> and I am a <span itemprop="title">Software Engineer</span>
-  at <span itemprop="worksFor"><span itemprop="affiliation">Google</span></span>
-  in the Search Quality division (roughly, the "Google Search" part). No, I
-  can't make your website rank better.</p>
+  at <span itemprop="worksFor"><span itemprop="affiliation">LinkedIn</span></span>.
+  Before that, I worked on Search at Google.</p>
 
   <p>I grew up in Zagreb, Croatia and got my BS and MS
   (<em>magna cum laude</em>) in Computer Science from the
