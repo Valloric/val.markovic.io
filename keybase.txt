@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/valloric
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://val.markovic.io
+  * I am valloric (https://keybase.io/valloric) on keybase.
+  * I have a public key with fingerprint 34E8 2EC7 D94F 04DF 40DC  0FE5 72C3 A2BB D9AF A1BA
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101cd20bd62c978d0895fe305ee819c34a23d55abb05c1a3e23c110799db2b562840a",
+            "fingerprint": "34e82ec7d94f04df40dc0fe572c3a2bbd9afa1ba",
+            "host": "keybase.io",
+            "key_id": "72c3a2bbd9afa1ba",
+            "kid": "0101cd20bd62c978d0895fe305ee819c34a23d55abb05c1a3e23c110799db2b562840a",
+            "uid": "7705075775461e3fc32dc96c6acba819",
+            "username": "valloric"
+        },
+        "service": {
+            "hostname": "val.markovic.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1475717895,
+    "expire_in": 157680000,
+    "prev": "212946d159a6b7f5e0b2924b1f9a8aba7df1002e11b412429be7db6fa09bc065",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMNDAnicrVJrTBRXGF2wKiLqJrpNa0oNQwtiKJk7z52tIi8l8lJKqrHBrnNn7sDA
+srvOLgsEUSzIo0pDov6QR0Xio3G1mOrGLCxVhKIECyWIUMHUFqKSamxViGl5dEbb
+9E9/9v65ud93zvnO+XK7li3QBfopnc1tP7acbPXr7ajL1+2Yci8uxqBNLMJMxVgu
+enUhi4gcTnOuLGImDAc4EEQChyJDCBxrFHEjR0uIxGmEjIATSIonSJGmeQhxWgA8
+iQhSAABnOU6EBKQZwkjhPBaJSbI1Cyl2RbY6VVmSQkYCCazIURJOiRKFiwIuIZol
+BJInIBQ5XuIB1IjZNofGUM1B3oGiZJtaUx/mV/b+A/8/+85/PYfFaZylWZamGIBI
+SSAJUeAYgeEFyKt6GtCBFCufh1S0i7dYbIosYCWRmFp1yQLSFqsl+RcRlccruTa1
+9zqSXbE5bYLNojaznU67w6SRnUV2DV2AoPlvHTOUraK6SpXhQopDtlkxE1CRglPW
+hAGlmgSsmjUSQ4V2WUFmWUPQLGPE1aPNQS5VkgAERzEioDmegaxEIxwSHEFBIHG8
+kYc8K0oAxwkEAKQAQREcRKwIGYnHOSjgDI1pyfZYbZiJUm3yWaqkQ86y8s58BWEl
+1zsy39D5BeoWLfTXvpgucIn+n483sXbFPFpcdMQbGj76uPKRIbFhg78n9hazKELp
+8XyXVTbTUzU9qX/gvpnii6uu+vRSekFG77P9Bg9bNWwaaLzh+cayU1oysTf+Ye3H
+L5sap5/O/XLo+vjuw79n3Mz/dvuJslX67hjHXffzPv+7hpqmnGpyT3tXnc5DgfcC
+brubfy4OSq6hTlRv2TzGlf/pPXnhpyejaZVdOen1GwoXwjurx6aIqhWD4/FseN+t
+5mLzgbcjWjup6YGYg6mTR+/Mrjy9A2Q93vZZfUl0eELSk5aB7uDYtpSpYHh8zZFT
+CdkNn790tuZEQ/cmXWFI/7OZPG90oPFd4/q0AwX9+93LcvyGrzb2zvr3J5y9mLq8
+KU73x42H9SMRCybMlaVi28Wr9yqr6+5NWD96Pr8t3Zu4Vr+0dCwjsvCrc2ElweW+
++MmROJfb7tcz13Tb4BAKvfsoepWhfetyX8OV48mg4trXW95c6bSHTAwI7oP3v1x/
+Pyomfuex5LGw4dm23R7X9o51hoov3j/lWzr020j794/WZJdbfP57h2qTCsb7Wuzx
+SaNlLzrGDpOwp6LGnRhEfDhHxHYGhH6QZPFS85GdIVfqw3whEeHXekozc1Iu73qh
+v/z0Qmh1bbfrzDp0dOPgD0O7XJ+ktZ+vn+GGzm0d3/yOeMwQpJ/LLDi/afX0WW96
+wHD4W6mDpgeXNlamRs39uu8vZ9fMDw==
+=ypgs
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/valloric
+
+==================================================================
