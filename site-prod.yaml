@@ -13,11 +13,11 @@ plugins:
     # Requires lessc: npm install less -g
     - extra_hyde_plugins.less.LessCSSPlugin
     # Requires PIL: sudo pip install pil
-    - extra_hyde_plugins.image_sizer.ImageSizerPlugin
+    #- extra_hyde_plugins.image_sizer.ImageSizerPlugin
     # Requires jpegoptim: brew install jpegoptim
     - hyde.ext.plugins.jpegoptim.JPEGOptimPlugin
     # Requires jpegtran
-    - extra_hyde_plugins.images.JPEGTranPlugin
+    #- extra_hyde_plugins.images.JPEGTranPlugin
     # Requires optipng: brew install optipng
     - hyde.ext.plugins.optipng.OptiPNGPlugin
     # Requires uglifyjs: npm install uglify-js -g

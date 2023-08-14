@@ -8,23 +8,16 @@ apt-get install -yqq apache2
 apt-get install -yqq optipng
 apt-get install -yqq jpegoptim
 # This has jpegtran
-apt-get install -yqq libjpeg-turbo-progs
-apt-get install -yqq python-dev
+apt-get install -yqq libjpeg-progs
+apt-get install -yqq python2-dev
 apt-get install -yqq python-setuptools
 apt-get install -yqq curl
+apt-get install -yqq python-pip
 
-curl -O -L https://raw.githubusercontent.com/pypa/pip/master/contrib/get-pip.py
-python get-pip.py
-
-# PIL requires special handling, otherwise fetching fails.
-pip install --allow-all-external --allow-unverified PIL -r /vagrant/requirements.txt
-pip install httpie
+pip2 install -r /vagrant/requirements.txt
+pip2 install httpie
 
 apt-get install -yqq nodejs
-
-# Needed so that the node binary is named 'node' and not 'nodejs'; necessary
-# because of scripts that call 'node'.
-apt-get install -yqq nodejs-legacy
 apt-get install -yqq npm
 
 npm install uglify-js -g
