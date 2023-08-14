@@ -16,17 +16,14 @@ About
        alt="headshot" />
   <p>Hi, my name is
   <span itemprop="name">Strahinja <span itemprop="nickname">Val</span>
-  Marković</span> and I am a <span itemprop="title">Software Engineer</span>
-  at <span itemprop="worksFor"><span itemprop="affiliation">LinkedIn</span></span>.
-  Before that, I worked on Search at Google.</p>
+  Marković</span> and I am a <span itemprop="title">Software Engineer</span></p>
 
   <p>I grew up in Zagreb, Croatia and got my BS and MS
   (<em>magna cum laude</em>) in Computer Science from the
   <span itemprop="alumniOf">University of Zagreb,
   Faculty of Electrical Engineering and Computing</span>.</p>
 
-  <p>I'm currently enjoying life in the heart of sunny Silicon Valley. I
-  contribute to various <a href="{{ content_url('/projects') }}">open source
+  <p>I contribute to various <a href="{{ content_url('/projects') }}">open source
     projects</a> in my spare time and I've even started a few myself.</p>
 
   <p>If you have a bug report/feature request for or question about an open
